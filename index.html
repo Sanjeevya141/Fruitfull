@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fruitfull</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css">
+  <link href="style.css">
+  <style>
+    .nav-link{
+      color: black;
+    }
+    /* Custom hover effect */
+    .nav-link:hover {
+      color: black;
+      /* Change text color on hover */
+      background-color: rgb(237, 247, 47);
+      /* Change background color on hover */
+    }
+
+    /* Highlight the active page */
+    .nav-link.active {
+      color: #fff !important;
+      /* Ensure text color is white for active link */
+      background-color: orange !important;
+      /* Background color for active link */
+      border-radius: .25rem;
+      /* Rounded corners for active link */
+    }
+
+    .our-products-text {
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .our-products-text:hover {
+      transform: scale(1.5);
+      /* Slightly enlarges the text on hover */
+    }
+
+    /* Explore More Products Button  */
+    html,
+    body {
+      height: 100%;
+    }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .button {
+      min-width: 300px;
+      min-height: 60px;
+      display: inline-flex;
+      font-family: 'Nunito', sans-serif;
+      font-size: 22px;
+      align-items: center;
+      justify-content: center;
+      text-transform: uppercase;
+      text-align: center;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      color: #313133;
+      background: orange;
+      background: linear-gradient(90deg, orange 0%, rgb(91, 229, 56) 100%);
+      border: none;
+      border-radius: 1000px;
+      box-shadow: 12px 12px 24px rgba(247, 215, 6, 0.64);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 10px;
+      bottom: -40px;
+    }
+
+    .button::before {
+      content: '';
+      border-radius: 1000px;
+      min-width: calc(350px + 12px);
+      min-height: calc(59px + 12px);
+      border: 6px solid rgb(234, 197, 15);
+      box-shadow: 0 0 60px rgba(137, 221, 12, 0.923);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all .3s ease-in-out 0s;
+    }
+
+    .button:hover,
+    .button:focus {
+      color: #313133;
+      transform: translateY(-6px);
+    }
+
+    .button:hover::before,
+    .button:focus::before {
+      opacity: 1;
+    }
+
+    .button::after {
+      content: '';
+      width: 40px;
+      height: 30px;
+      border-radius: 100%;
+      border: 6px solid orange;
+      position: absolute;
+      z-index: -1;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+    }
+
+    .button:hover::after,
+    .button:focus::after {
+      animation: none;
+      display: none;
+    }
+
+    @keyframes ring {
+      0% {
+        width: 35px;
+        height: 35px;
+        opacity: 1;
+      }
+
+      100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+      }
+    }
+
+/* Footer section  */
+
+body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .textWhiteEnter {
+      color: black;
+    }
+
+    .footer {
+      position: relative;
+      bottom: -100px;
+      background-color: beige
+    }
+
+    .footer-section {
+      padding: 2rem;
+      border-bottom: 1px solid black;
+    }
+
+    .footer-container {
+      margin-top: 5rem;
+    }
+
+    .footer-row {
+      margin-top: 3rem;
+    }
+
+    .footer-contact {
+      padding: 2px;
+    }
+
+    .footer-link {
+      text-decoration: none;
+      color: black;
+    }
+
+    .footer-bottom {
+      background-color: rgba(0, 0, 0, 0.05);
+      padding: 1rem;
+    }
+
+    .footer-bottom a {
+      color: black;
+      font-weight: bold;
+    }
+    .footer-link:hover{
+      color: orange;
+    }
+
+  </style>
+</head>
+
+<body>
+  <!-- Navbar section starts here  -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/Logo.png" alt="" height="25" width="60"></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav flex-grow-1 justify-content-between me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="products.html">Product</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="categories.html">Categories</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="Contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- navbar ends here -->
+
+  <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="2000">
+        <img src="img/amla1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="img/ap1.jpeg" class="d-block w-100" alt="...">
+      </div>
+      <div class="carousel-item" data-bs-interval="2000">
+        <img src="img/amla juice1.jpeg" class="d-block w-100" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+      data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+  <div class="container marketing">
+
+
+    <div class="p-4 text-center">
+      <a href="products.html" class="link-offset-2 link-underline link-underline-opacity-0">
+        <h1 class="text-body-emphasis our-products-text">OUR PRODUCTS</h1>
+      </a>
+    </div>
+
+
+
+    <!-- <hr class="featurette-divider"> -->
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Amla Murraba
+          <span class="text-body-secondary">It’ll blow your mind.</span>
+        </h2>
+        <p class="lead">Indulge in the delightful sweetness and health benefits of our premium Amla Murabba. Made from
+          fresh, hand-picked Indian gooseberries (amla), slow-cooked in sugar syrup, this traditional Indian delicacy is
+          a perfect blend of taste and nutrition.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="img/amla murabba.webp" alt="Description of image" class="featurette-image img-fluid mx-auto"
+          width="500" height="500">
+      </div>
+    </div>
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Amla Pickle <span class="text-body-secondary">Spicy Amla</span>
+        </h2>
+        <p class="lead">Spice up your meals with our tangy and flavorful Amla Pickle, made from fresh, hand-picked
+          Indian gooseberries (amla). This traditional Indian condiment combines the unique tartness of amla with a
+          blend of aromatic spices, offering a perfect balance of taste and health benefits. Ideal for enhancing your
+          everyday meals, our Amla Pickle is a must-have in every kitchen.</p>
+      </div>
+      <div class="col-md-5 order-md-1">
+        <img src="img/amla-achaar.jpg" alt="Description of image" class="featurette-image img-fluid mx-auto" width="500"
+          height="500">
+      </div>
+    </div>
+
+    <hr class="featurette-divider">
+
+    <div class="row featurette">
+      <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Amla Juice <span class="text-body-secondary">Anitioxidant</span>
+        </h2>
+        <p class="lead">Discover the pure goodness of nature with our premium Amla Juice, made from fresh, hand-picked
+          Indian gooseberries. Packed with the powerful benefits of Vitamin C and antioxidants, our Amla Juice is the
+          perfect addition to your daily health regimen.</p>
+      </div>
+      <div class="col-md-5">
+        <img src="img/amla juice.jpg" alt="Description of image" class="featurette-image img-fluid mx-auto" width="500"
+          height="500">
+      </div>
+    </div>
+
+    <!-- <hr class="featurette-divider"> -->
+
+    <!-- <div class="p-3 d-grid gap-2">
+      <a href="products.html" class="btn btn-primary btn-lg active btn-outline-warning" data-mdb-ripple-init role="button" aria-pressed="true">Explore More Products</a>
+  </div> -->
+
+    <div class="p-5 wrap">
+      <a href="products.html" class="button link-offset-2 link-underline link-underline-opacity-0">Explore More
+        Products</a>
+    </div>
+
+    <!-- /END THE FEATURETTES -->
+
+  </div>
+
+
+  <!-- Footer section starts here -->
+  <footer class="footer text-center text-lg-start text-muted">
+    <section class="footer-section d-flex justify-content-center justify-content-lg-between">
+      <div class="me-5 d-none d-lg-block">
+        <span class="textWhiteEnter">Get connected with us on social networks:</span>
+      </div>
+
+      <div>
+        <a href="https://www.instagram.com/fruitfull_official/?igsh=bXQwOWJ2NWRxZHp6&utm_source=qr" target="_blank" class="me-4 text-reset">
+          <i id="instagram-icon" class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100087940966398&mibextid=LQQJ4d" target="_blank" class="me-4 text-reset">
+          <i id="facebook-icon" class="fab fa-facebook-f"></i>
+        </a>
+        <a href="" target="_blank" class="me-4 text-reset">
+          <i id="youtube-icon" class="fa-brands fa-youtube"></i>
+        </a>
+        <a href="https://wa.me/qr/264ACEF5XOWTO1" target="_blank" class="me-4 text-reset">
+          <i id="whatsapp-icon" class="fa-brands fa-whatsapp"></i>
+        </a>
+        <!-- <a href="" target="_blank" class="me-4 text-reset">
+          <i id="google-icon" class="fab fa-google">
+        </a> -->
+        <!-- <a href="" target="_blank" class="me-4 text-reset">
+          <i id="x-icon" class="fa-brands fa-square-x-twitter">
+        </a> -->
+        
+        <!-- <a href="" target="_blank" class="me-4 text-reset">
+          <i id="linkedin-icon" class="fab fa-linkedin">
+        </a> -->
+        
+      </div>
+    </section>
+
+    <section class="footer-container text-center text-md-start">
+      <div class="container">
+        <div class="row footer-row">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <h6 class="textWhiteEnter text-uppercase fw-bold mb-4" style="font-size: 20px;">
+              <img src="img/Logo.png" alt="Fruitfull Logo" style="width: 80px; height: auto;margin-right: 30px;">Fruitfull
+            </h6>
+            <p class="textWhiteEnter">
+              From Tangy pickles to Sweet candies, discover the best of fruit-based foods here.
+            </p>
+          </div>
+
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <h6 class="text-uppercase fw-bold mb-4 textWhiteEnter">Useful links</h6>
+            <p>
+              <a href="index.html" class="footer-link">Home</a>
+            </p>
+            <p>
+              <a href="products.html" class="footer-link">Products</a>
+            </p>
+            <p>
+              <a href="categories.html" class="footer-link">Categories</a>
+            </p>
+            <p>
+              <a href="Contact.html" class="footer-link">Contact us</a>
+            </p>
+          </div>
+
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <h6 class="text-uppercase fw-bold mb-4 textWhiteEnter">Contact</h6>
+            <p class="footer-contact textWhiteEnter">
+              <i class="fas fa-home me-2"></i>
+              <a href="https://g.co/kgs/eFUM6i8" class="footer-link" target="_blank" rel="noopener noreferrer">Chilbila, Prayagraj-Ayodhya Road, Pratapgarh, UP-230403</a>
+            </p>
+            <p class="footer-contact textWhiteEnter">
+              <i class="fas fa-envelope me-3"></i>
+              <a href="https://mail.google.com/mail/u/0/?fs=1&to=fruitfullfoodproduct@gmail.com&su=Subject&body=Enter%20Message&tf=cm" class="footer-link" target="_blank" rel="noopener noreferrer">fruitfullfoodproduct@gmail.com</a>
+            </p>
+            <p class="footer-contact textWhiteEnter">
+              <i class="fas fa-phone me-3"></i>
+              <a href="tel:9792010931" class="footer-link" target="_blank" rel="noopener noreferrer">+91 9792010931/+91 9839017408</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer-bottom text-center">
+      © 2024 Copyright&nbsp;&nbsp;<a href="index.html" class="footer-link"><br>Fruitfull Food Products</a>
+    </div>
+  </footer>
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
+    </script>
+</body>
+
+</html>
