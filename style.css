@@ -1,14 +1,263 @@
 @import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,200;10..48,300;10..48,500&display=swap');
+/* Nav bar styling  */
+.nav-link {
+    color: black;
+}
 
-        /* Custom hover effect */
-        .nav-link:hover {
-            color: #007bff; /* Change text color on hover */
-            background-color: #de1a1a; /* Change background color on hover */
-        }
+/* Custom hover effect */
+.nav-link:hover {
+    color: black;
+    /* Change text color on hover */
+    background-color: rgb(237, 247, 47);
+    /* Change background color on hover */
+}
 
-        /* Highlight the active page */
-        .nav-link.active {
-            color: #fff !important;
-            background-color: #007bff !important;
-        }
+/* Highlight the active page */
+.nav-link.active {
+    color: #fff !important;
+    /* Ensure text color is white for active link */
+    background-color: orange !important;
+    /* Background color for active link */
+    border-radius: .25rem;
+    /* Rounded corners for active link */
+}
 
+/* Nav bar styling ends hare  */
+
+.our-products-text {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.our-products-text:hover {
+    transform: scale(1.5);
+    /* Slightly enlarges the text on hover */
+}
+
+/* Explore More Products Button  */
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button {
+    min-width: 300px;
+    min-height: 60px;
+    display: inline-flex;
+    font-family: 'Nunito', sans-serif;
+    font-size: 22px;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1.3px;
+    font-weight: 700;
+    color: #313133;
+    background: orange;
+    background: linear-gradient(90deg, orange 0%, rgb(91, 229, 56) 100%);
+    border: none;
+    border-radius: 1000px;
+    box-shadow: 12px 12px 24px rgba(247, 215, 6, 0.64);
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    padding: 10px;
+    bottom: -40px;
+}
+
+.button::before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(350px + 12px);
+    min-height: calc(59px + 12px);
+    border: 6px solid rgb(234, 197, 15);
+    box-shadow: 0 0 60px rgba(137, 221, 12, 0.923);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.button:hover,
+.button:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+.button:hover::before,
+.button:focus::before {
+    opacity: 1;
+}
+
+.button::after {
+    content: '';
+    width: 40px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid orange;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+.button:hover::after,
+.button:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 35px;
+        height: 35px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+/* Footer section  */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.textWhiteEnter {
+    color: black;
+}
+
+.footer {
+    position: relative;
+    bottom: -100px;
+    background-color: beige
+}
+
+.footer-section {
+    padding: 2rem;
+    border-bottom: 1px solid black;
+}
+
+.footer-container {
+    margin-top: 5rem;
+}
+
+.footer-row {
+    margin-top: 3rem;
+}
+
+.footer-contact {
+    padding: 2px;
+}
+
+.footer-link {
+    text-decoration: none;
+    color: black;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+}
+
+.footer-bottom a {
+    color: black;
+    font-weight: bold;
+}
+
+.footer-link:hover {
+    color: orange;
+}
+
+/* Contact Page  */
+/* Form Feedback */
+* {
+    box-sizing: border-box;
+  }
+  
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+  }
+  
+  input[type=submit] {
+    background-color: #e4b612;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: right;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #bde412;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  .carousel-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      color: #fff; /* Text color */
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: shadow for better readability */
+      background-color: rgba(0,0,0,0.3); /* Optional: semi-transparent background */
+      padding: 10px;
+      border-radius: 5px;
+  }

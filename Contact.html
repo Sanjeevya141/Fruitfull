@@ -11,157 +11,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.css">
-  <link href="style.css">
-  <style>
-    .nav-link{
-      color: black;
-    }
-    /* Custom hover effect */
-    .nav-link:hover {
-      color: black;
-      /* Change text color on hover */
-      background-color: rgb(237, 247, 47);
-      /* Change background color on hover */
-    }
-
-    /* Highlight the active page */
-    .nav-link.active {
-      color: #fff !important;
-      /* Ensure text color is white for active link */
-      background-color: orange !important;
-      /* Background color for active link */
-      border-radius: .25rem;
-      /* Rounded corners for active link */
-    }
-
-    /* Footer section  */
-
-body {
-      margin: 0;
-      padding: 0;
-    }
-
-    .textWhiteEnter {
-      color: black;
-    }
-
-    .footer {
-      position: relative;
-      bottom: -100px;
-      background-color: beige;
-    }
-
-    .footer-section {
-      padding: 2rem;
-      border-bottom: 1px solid black;
-    }
-
-    .footer-container {
-      margin-top: 5rem;
-    }
-
-    .footer-row {
-      margin-top: 3rem;
-    }
-
-    .footer-contact {
-      padding: 2px;
-    }
-
-    .footer-link {
-      text-decoration: none;
-      color: black;
-    }
-
-    .footer-bottom {
-      background-color: rgba(0, 0, 0, 0.05);
-      padding: 1rem;
-    }
-
-    .footer-bottom a {
-      color: black;
-      font-weight: bold;
-    }
-    .footer-link:hover{
-      color: orange;
-    }
-
-    /* Form Feedback */
-    * {
-      box-sizing: border-box;
-    }
-    
-    input[type=text], select, textarea {
-      width: 100%;
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      resize: vertical;
-    }
-    
-    label {
-      padding: 12px 12px 12px 0;
-      display: inline-block;
-    }
-    
-    input[type=submit] {
-      background-color: #e4b612;
-      color: white;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      float: right;
-    }
-    
-    input[type=submit]:hover {
-      background-color: #bde412;
-    }
-    
-    .container {
-      border-radius: 5px;
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-    
-    .col-25 {
-      float: left;
-      width: 25%;
-      margin-top: 6px;
-    }
-    
-    .col-75 {
-      float: left;
-      width: 75%;
-      margin-top: 6px;
-    }
-    
-    /* Clear floats after the columns */
-    .row:after {
-      content: "";
-      display: table;
-      clear: both;
-    }
-    
-    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
-    @media screen and (max-width: 600px) {
-      .col-25, .col-75, input[type=submit] {
-        width: 100%;
-        margin-top: 0;
-      }
-    }
-    .carousel-caption {
-        position: absolute;
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        color: #fff; /* Text color */
-        text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Optional: shadow for better readability */
-        background-color: rgba(0,0,0,0.3); /* Optional: semi-transparent background */
-        padding: 10px;
-        border-radius: 5px;
-    }
-    </style>
+  <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
@@ -348,16 +198,34 @@ body {
   src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
   
   // Form 
-            const scriptURL = 'https://script.google.com/macros/s/AKfycbzm3H-vjJ_xPoPEmA1K9fdLrbPPaAKb8bMHv9RhyU9Ns7vVDCkWEjWKrFAOQFn2wsfk0A/exec'
-            const form = document.forms['google-sheet']
-          
-            form.addEventListener('submit', e => {
-              e.preventDefault()
-              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
-                .catch(error => console.error('Error!', error.message))
-            })
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbw7n9V69ixx4WxSj6OoAx8br-25MMPM3T2ElsUdCsWRvEv3s20LqCskASuCj8D1x3ZtRA/exec'; // Replace with your deployed web app URL
+  const form = document.forms['google-sheet'];
+  
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const formData = new FormData(form);
+    const data = {};
+    formData.forEach((value, key) => {
+      data[key] = value;
+    });
+
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: JSON.stringify(data),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.result === 'Success') {
+        alert("Thanks for contacting us! We will get in touch with you soon.");
+        form.reset();
+      } else {
+        alert("There was an error: " + result.message);
+      }
+    })
+    .catch(error => console.error('Error!', error.message));
+  });
+
 </script>
 </body>
-
 </html>
