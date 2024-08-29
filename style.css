@@ -274,3 +274,63 @@ body {
 .carousel-caption {
     bottom: 20px; /* Adjust position if needed */
 }
+
+
+/* Social icon color */
+.text-reset i {
+    color: #6c757d; /* Default color for icons */
+    transition: color 0.3s ease; /* Smooth transition */
+  }
+  
+  /* Instagram icon color and hover effect */
+  #instagram-icon {
+    color: #C13584; /* Instagram color */
+  }
+  
+  #instagram-icon:hover {
+    color: #E1306C; /* Slightly different Instagram color on hover */
+  }
+  
+  /* Facebook icon color and hover effect */
+  #facebook-icon {
+    color: #3b5998; /* Facebook color */
+  }
+  
+  #facebook-icon:hover {
+    color: #8b9dc3; /* Slightly different Facebook color on hover */
+  }
+  
+  /* YouTube icon color and hover effect */
+  #youtube-icon {
+    color: #FF0000; /* YouTube color */
+  }
+  
+  #youtube-icon:hover {
+    color: #cc0000; /* Slightly different YouTube color on hover */
+  }
+  
+  /* WhatsApp icon color and hover effect */
+  #whatsapp-icon {
+    color: #25D366; /* WhatsApp color */
+  }
+  
+  #whatsapp-icon:hover {
+    color: #128C7E; /* Slightly different WhatsApp color on hover */
+  }
+  
+
+  /* Custom modal styles (optional) */
+.modal-content {
+    border-radius: 10px;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+
+.modal-footer {
+    border-top: none;
+}
+
+
+

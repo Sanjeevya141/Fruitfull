@@ -60,20 +60,21 @@
   <!-- Products section list -->
   <div class="album py-5 bg-body-tertiary">
     <div class="container">
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        <!-- Example Card -->
         <div class="col">
           <div class="card shadow-sm">
             <img src="img/Amla-Murabba.webp" class="card-img-top" alt="Thumbnail image" width="100%" height="225">
             <div class="card-body">
               <p class="card-text">
               <h5>Amla Murraba</h5><br>Delight in the perfect blend of health and sweetness with our Amla Burfi. Made
-              from
-              fresh, hand-picked Indian gooseberries (amla), our Amla Burfi is a nutritious and delicious treat.This
-              traditional Indian sweet combines the tangy goodness of amla w.</p>
+              from fresh, hand-picked Indian gooseberries (amla), our Amla Burfi is a nutritious and delicious treat.
+              This traditional Indian sweet combines the tangy goodness of amla.
+              </p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal1">View</button>
                 </div>
               </div>
             </div>
@@ -89,7 +90,8 @@
               Amla Juice is the perfect addition to your daily health regimen.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal2">View</button>
                 </div>
               </div>
             </div>
@@ -105,7 +107,8 @@
               wholesome ingredients to provide a delicious and healthy snack.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal3">View</button>
                 </div>
               </div>
             </div>
@@ -120,8 +123,8 @@
               fresh, hand-picked Indian gooseberries (amla), our Amla Burfi is a nutritious and delicious treat.This
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
-                <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal4">View</button>
                 </div>
               </div>
             </div>
@@ -139,7 +142,8 @@
               Candy is a tasty treat you can enjoy anytime, anywhere.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal5">View</button>
                 </div>
               </div>
             </div>
@@ -157,7 +161,8 @@
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal6">View</button>
                 </div>
               </div>
             </div>
@@ -174,7 +179,8 @@
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal7">View</button>
                 </div>
               </div>
             </div>
@@ -192,7 +198,8 @@
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal8">View</button>
                 </div>
               </div>
             </div>
@@ -209,7 +216,8 @@
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal9">View</button>
                 </div>
               </div>
             </div>
@@ -226,11 +234,33 @@
               traditional Indian sweet combines the tangy goodness of amla w.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal"
+                    data-bs-target="#productModal10">View</button>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Structure -->
+  <div class="modal fade" id="productModal1" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="productModalLabel">Amla Murraba</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="img/Amla-Murabba.webp" class="img-fluid mb-3" alt="Product Image">
+          <p>Delight in the perfect blend of health and sweetness with our Amla Burfi. Made from fresh, hand-picked
+            Indian gooseberries (amla), our Amla Burfi is a nutritious and delicious treat. This traditional Indian
+            sweet combines the tangy goodness of amla.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
     </div>
@@ -333,6 +363,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
       src = "https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.2/mdb.min.js"
+      src = "https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"
     </script>
 </body>
 
