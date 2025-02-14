@@ -131,6 +131,45 @@ body {
         opacity: 0;
     }
 }
+/* Advertisement button starts here  */
+
+/* .popup-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.popup-container button {
+  margin-top: 10px;
+  padding: 10px;
+  border: none;
+  background: red;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.ad-button {
+  padding: 12px 15px;
+  background: rgb(255, 213, 0);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+} */
+/* Advertisement button ends here  */
+
+
+
+
 
 /* Footer section  */
 
